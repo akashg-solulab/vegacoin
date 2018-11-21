@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Welcome to Vega</title>
+</head>
+<style type="text/css">
+	@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,600,700');
+	*{box-sizing: border-box;}
+	
+	@media (max-width: 550px) {
+		img{max-width: 100%;}
+		table, tbody, tr, td {max-width: 100% !important;display: block !important;}
+		.welcome-text{padding: 15px 30px !important;}
+		.plr-xs-0{padding-left: 0px !important; padding-right: 0px !important;}
+	}
+	@media (max-width: 460px) {
+		.main-wrapper > tbody > tr > td {padding: 20px !important;}
+	}
+	.btn-css{
+		padding: 12px 30px;
+		background: linear-gradient(90deg, #d60000, #fb7400);
+		color: #ffffff;
+		font-weight: bold;
+		border: none;
+		outline: none;
+		text-align: center;
+		border-radius: 20px;
+	}
+</style>
+<body style="background: #fafafa;font-family: 'Montserrat', sans-serif;font-size: 15px;color: #000;">
+
+<table class="main-wrapper" style="max-width: 600px; width: 100%; margin: 20px auto;background: linear-gradient(90deg, #f84646, #fb9f51);min-height: 100px; box-shadow: 0 0 9px rgba(0,0,0, 0.2);">
+		<tr>
+			<td style="padding: 34px;">
+
+				<table style="background-color: #fff;width: 100%;text-align: center;font-size: 15px;border-radius: 15px 15px 0px 0px;">
+					<tr>
+						<td style="padding: 15px 0px;"><img src="{{constants.ACCESSURL}}dashboard_files/logo.png" alt="" width="150"></td>
+					</tr>
+					<tr>
+						<td class="welcome-text" align="center" style="padding: 15px 90px 0px; text-align: left;">
+							Vega Registration Confirmation<br>
+							<br>
+							<big><strong>Congratulations <span style="font-size: 20px;">{{fullname}}</span> </strong></big><br>
+
+
+							<br>
+							You've successfully registered your personal account with Vega. You're almost finished!<br>
+							To complete your account registration, please click on following. 
+						</td>
+					</tr>
+				</table>
+				
+				<table style="background-color: #fff;width: 100%;padding: 0px 22px 8px;border-radius: 0 0 15px 15px;">
+					<tr>
+						<td style="padding: 15px 90px 40px; text-align: left;"><a href="{{constants.ACCESSURL}}verify-email/{{token}}" target="_blank">Click To Confirm Your Email</a> 
+						</td>
+					</tr>
+					{{!-- <tr>
+						<td align="center" class="plr-xs-0" style="padding: 35px 55px 20px; text-align: left;">
+							If you need help resetting your password contact us at <a href="mailto:help@vega.com">help@vega.com</a>
+						</td>
+					</tr> --}}
+				</table>
+			</td>
+		</tr>
+	</table>
+
+
+<script src="{{constants.ACCESSURL}}js/app.js" type="text/javascript"></script>
+<script src="{{constants.ACCESSURL}}js/jquery.toast.js" type="text/javascript"></script>
+
+</body>
+</html>

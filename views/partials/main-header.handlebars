@@ -1,0 +1,59 @@
+
+    <header class="fixed-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+              <a href="dashboard">
+                <img class="dash-logo pull-left" src="{{constants.ACCESSURL}}dashboard_files/logo.png" width="30" />
+                <img class="dash-logo pull-left" src="{{constants.ACCESSURL}}dashboard_files/logo-txt.png" style="position: relative;top: 7px; margin-left: 5px;" width="80" />
+              </a>
+          <ul _ngcontent-c9="" class="list-inline main-nav" style="float: right">
+           
+            <!-- <li _ngcontent-c9="" class="list-inline-item" style="padding-right: 30px; position: relative;">
+              <app-search-bar ngcontent-c9="" nghost-c10="">    <input _ngcontent-c10="" class="search-input" name="" placeholder="Search by Address / Txhash / Block / Token / Ens" type="text">
+              <button _ngcontent-c10="" class="btn " style="    background-color: #f9f9f9;
+              border-color: #cacaca; position: absolute;
+              right: 28px;
+              top: 6px;
+              border-radius: 20px;
+              padding: 1px 12px;
+              ">
+              <i _ngcontent-c10="" class="material-icons" style="
+              color: #d60000;
+              top: 3px;
+              position: relative;
+              right: -1px;
+          ">
+              search
+              </i>
+              </button></app-search-bar>
+            </li> -->
+
+            {{!-- <div class="tooltip"> --}}
+            <li _ngcontent-c9="" class="list-inline-item" style="top: -5px;position: relative;border-right: thin solid #bdbdbd; padding-right: 14px; font-weight: bold; ">{{objvar.fullname}}</li>
+            
+            <li ngcontent-c9="" title="Dashboard" class="list-inline-item"><a ngcontent-c9="" href="dashboard"><i _ngcontent-c9="" class="material-icons">dashboard</i></a></li>
+            <li ngcontent-c9="" title="Transactions" class="list-inline-item"><a ngcontent-c9="" href="transactions"><i _ngcontent-c9="" class="material-icons">receipt</i></a></li>
+            <li ngcontent-c9="" title="Bounty Transactions" class="list-inline-item"><a ngcontent-c9="" href="user-bounty"><i _ngcontent-c9="" class="material-icons">reorder</i></a></li>
+            <li ngcontent-c9="" title="Settings" class="list-inline-item"><a ngcontent-c9="" href="setting"><i _ngcontent-c9="" class="material-icons">settings</i></a></li>
+            <li ngcontent-c9="" title="Logout" class="list-inline-item"><a ngcontent-c9="" id ="logout" href="logout"><i _ngcontent-c9="" class="material-icons">logout</i></a></li>
+            {{!-- </div> --}}
+            {{!-- <li _ngcontent-c9="" class="list-inline-item">
+              <div _ngcontent-c9="" class="dropdown" style="position: relative;top: 4px;left: -12px;">
+                <a _ngcontent-c9="" aria-expanded="false" aria-haspopup="true" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" href="#" id="dropdownMenuLink" role="button">
+                  <i _ngcontent-c9="" class="material-icons" style="font-size: 30px;">
+                  arrow_drop_down
+                  </i>
+                </a>
+
+                <div _ngcontent-c9="" aria-labelledby="dropdownMenuLink" class="dropdown-menu dropdown-menu-right">
+                  <a _ngcontent-c9="" class="dropdown-item" href="">Settings</a>
+                  <a _ngcontent-c9="" class="dropdown-item" >Logout</a>
+                </div>
+              </div>    
+            </li> --}}
+          </ul>
+            </div>
+        </div>    
+    </div>
+  </header>

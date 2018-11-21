@@ -1,0 +1,89 @@
+<div _ngcontent-c11="" class="container-fluid" style="padding: 60px 0 0 0;">
+  
+  <table _ngcontent-c12="" class="table table-responsive">
+    {{!-- <colgroup>
+      <col width="14.28%">
+      <col width="14.28%">
+      <col width="14.28%">
+      <col width="14.28%">
+      <col width="14.28%">
+      <col width="14.28%">
+      <col width="14.28%">
+    </colgroup> --}}
+
+      
+    
+    <thead _ngcontent-c12="">
+           {{#ifCond trans.t1.length ">" 0}}
+      <tr _ngcontent-c12="">
+        <th _ngcontent-c12="" scope="col">TxHash</th>
+        <th _ngcontent-c12="" scope="col">Date</th>
+        <th _ngcontent-c12="" scope="col">From</th>
+        <th _ngcontent-c12="" scope="col">Tokens</th>
+        {{!-- <th _ngcontent-c12="" scope="col">To</th>
+        <th _ngcontent-c12="" scope="col">Value (ETH)</th>
+        <th _ngcontent-c12="" scope="col"> <span _ngcontent-c12="" class="text-muted">[TxFee]</span> </th> --}}
+      </tr>
+        {{/ifCond}}
+    </thead>
+
+    <tbody _ngcontent-c12="">
+
+      {{#ifCond trans.t1.length "==" 0}}
+      <div style="font-size:1.5em;text-align:center;margin-top:2em">No Bounty Tokens Found</div>
+      {{/ifCond}}
+
+      {{#ifCond trans.t1.length ">" 0}}
+
+          {{#each trans.t1}}
+      <tr _ngcontent-c12="">
+         <td _ngcontent-c12="" scope="row"> <div _ngcontent-c12="" class="truncate-150"><a _ngcontent-c12="" target="_blank" href="https://ropsten.etherscan.io/tx/{{this.TxHash}}">
+            
+             {{this.TxHash}} 
+             
+         </a></div>  </td>
+         <td _ngcontent-c12=""> 
+
+            
+               {{this.Date}} 
+              
+         </td>
+         <td _ngcontent-c12="">
+              {{this.from}}
+         </td>
+         <td _ngcontent-c12="" style="position: relative;padding-right: 65px;"> 
+          <div _ngcontent-c12="" class="truncate-150 pull-left">
+
+                {{this.value}}
+          </div>
+          {{!-- <span _ngcontent-c12="" class="badge badge-success" style="background: #e67e22;padding: 5px 10px;border-radius: 5px; position: absolute;right: 10px;top: 6px;">OUT</span> --}}
+        </td>
+         {{!-- <td _ngcontent-c12=""> 
+          <div _ngcontent-c12="" class="truncate-150 pull-left">
+
+                {{this.to}}
+          </div>
+        </td>     
+        <td _ngcontent-c12="">
+                {{this.value}}
+            
+        </td>  
+        <td _ngcontent-c12="">
+                {{this.gas}}
+        </td>            --}}
+      </tr>
+       {{/each}}  
+      {{/ifCond}}
+
+                                                          
+    </tbody>
+  </table>
+</div>
+
+
+  <script src="{{constants.ACCESSURL}}dashboard_files/jquery-ui.js"></script>
+  <script type="text/javascript" src="{{constants.ACCESSURL}}dashboard_files/inline.js"></script>
+  <script type="text/javascript" src="{{constants.ACCESSURL}}dashboard_files/polyfills.js"></script>
+  <script type="text/javascript" src="{{constants.ACCESSURL}}dashboard_files/styles.js"></script>
+  <script type="text/javascript" src="{{constants.ACCESSURL}}dashboard_files/vendor.js"></script>
+  <script type="text/javascript" src="{{constants.ACCESSURL}}dashboard_files/main.js"></script>

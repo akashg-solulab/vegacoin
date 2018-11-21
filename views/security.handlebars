@@ -1,0 +1,36 @@
+  <div class="headerdes">
+    <div class="regbre">
+      <img src="{{constants.ACCESSURL}}dashboard_files/logo.png">
+    </div>
+  </div>
+
+  <div class="container-fluid reg-container first-form" style="height: 500px;">
+    <form action="{{constants.ACCESSURL}}users/reset-password" method="post" class="ajax-reset-password" id= "ajax-fp">
+      <input type="hidden" name="token" value="{{token}}"/>
+      <div class="reg-form">
+        <div class="reg-active reg-border">
+          <h3>Reset Password</h3>
+          <hr>
+          <div class="reginr">
+            
+            <span><i class="fa fa-user"></i></span>
+
+            {{!-- maxlength="24" minlength="8" --}}
+            <input autocomplete="off"  name="password" id = "password" placeholder="Password" type="password" ng-reflect-required="" ng-reflect-minlength="4" ng-reflect-maxlength="100" ng-reflect-name="email" class="ng-untouched ng-pristine ng-invalid">
+          </div>
+           <div class="reginr">
+            <span><i class="fa fa-user"></i></span>
+            <input autocomplete="off"  name="confirm_password" placeholder="Confirm Password" type="password" ng-reflect-required="" ng-reflect-minlength="4" ng-reflect-maxlength="100" ng-reflect-name="email" class="ng-untouched ng-pristine ng-invalid">
+          </div>
+
+          <button class="btn btn-primary reg-button" id="continue" style="margin-top: 25px;" type="submit">
+            <p style="margin-bottom: 0px;"><i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;&nbsp;Continue</p>
+          </button>
+          <a href="/users/login" style="margin-top: 10px; float: left;">Login</a>
+			      	<a href="/" style="margin-top: 10px; float: right;font-weight: bold;">New Register Here</a>
+        </div>
+      </div>
+    </form>
+  </div>
+<script src="{{constants.ACCESSURL}}dashboard_files/jquery-ui.js"></script>
+  <script src="{{constants.ACCESSURL}}dashboard_files/reset-validation.js"></script>

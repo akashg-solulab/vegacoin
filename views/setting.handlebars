@@ -1,0 +1,218 @@
+
+	<div class="container-fluid white-bg bb" style="margin-top: 80px; box-shadow: 1px 1px 1px rgba(0,0,0,0.1);border-top: thin solid #dadada;">
+		<div class="container mw-900 br bl">
+			<div class="row">
+				
+
+
+        
+				<div class="col-md-12 form-toggler-container">
+					
+					<div class="row">
+						<div class="col-md-12 bb">
+							<h4 class="title-bb">General Account Setttings</h4>
+							{{!-- <lable class="abcd">{{profile.fullName}}</lable> --}}
+						</div>
+					</div>
+
+					    <form action="{{constants.ACCESSURL}}users/edit-profile" method="post" class="ajax-editProfile">
+
+					<div class="row bb hoverable-row p-rel" style="padding: 15px;">
+					
+						<div class="col-md-3">
+							<strong>First name</strong>
+						</div>
+						<div class="col-md-6">
+							<span id="fullname">{{profile.firstname}}</span>
+						</div>
+					</div>
+
+					<div class="row bb hoverable-row p-rel" style="padding: 15px;">
+					
+						<div class="col-md-3">
+							<strong>Last name</strong>
+						</div>
+						<div class="col-md-6">
+							<span id="lastname">{{profile.lastname}}</span>
+						</div>
+					</div>
+
+					
+					{{!-- <div class="row bb hoverable-row p-rel" style="padding: 15px;">
+						<div class="col-md-3" style="font-size: 12px;">
+							<strong >Email</strong>
+						</div>
+						<div class="col-md-6">
+							<span id="email">{{profile.email}}</span>
+						</div>
+
+					</div> --}}
+
+					
+					<div class="row bb hoverable-row p-rel" style="padding: 15px;">
+						<div class="col-md-3">
+							<strong >DOB</strong>
+						</div>
+						<div class="col-md-6">
+							<span id="dob">{{profile.dob}}</span>
+						</div>
+					</div>
+{{!-- 
+					<div class="row bb hoverable-row p-rel" style="padding: 15px;">
+						<div class="col-md-3">
+							<strong >Country</strong>
+						</div>
+						<div class="col-md-6">
+							<span id="country">{{profile.country}}</span>
+						</div>
+						
+					</div> --}}
+
+					
+					<div class="row bb hoverable-row p-rel" style="padding: 15px;">
+						<div class="col-md-3">
+							<strong >Wallet Address</strong>
+						</div>
+						<div class="col-md-6">
+							
+							<span style="word-wrap: break-word;" id="publicWalletAddress">{{profile.publicWalletAddress}}</span>
+						</div>
+						
+					</div>
+
+					
+					<div class="row bb hoverable-row p-rel" style="padding: 15px;">
+						<div class="col-md-3">
+							<strong >Company</strong>
+						</div>
+						<div class="col-md-6">
+							<span id="company" >{{profile.company}}</span>
+						</div>
+				
+					</div>
+					<div class="row bb hoverable-row p-rel" style="padding: 15px 30px;">
+						<input type="button" value="Edit" id="firstnamebut" class="btn btn-primary" style="top:0px;">
+						<input value="Save" id="firstnamesave" style="display:none;top:0px;" type="submit" class="btn btn-primary"> 
+						<input type="button" value="Cancel" id="firstnamecancel" style="display:none;top:0px;" class="btn btn-primary">
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+    <script src="{{constants.ACCESSURL}}dashboard_files/jquery-ui.js"></script>
+		<script src="{{constants.ACCESSURL}}dashboard_files/edit-validation.js"></script>
+
+	<script type="text/javascript" src="{{constants.ACCESSURL}}dashboard_files/inline.js"></script>
+	<script type="text/javascript" src="{{constants.ACCESSURL}}dashboard_files/polyfills.js"></script>
+	<script type="text/javascript" src="{{constants.ACCESSURL}}dashboard_files/styles.js"></script>
+	<script type="text/javascript" src="{{constants.ACCESSURL}}dashboard_files/vendor.js"></script>
+	<script type="text/javascript" src="{{constants.ACCESSURL}}dashboard_files/main.js"></script>
+
+<script>
+    
+
+$(document).ready(function() {
+	function divClicked() {
+		console.log("hello");
+		firstname = $.trim($("#fullname").text());
+		lname = $.trim($("#lastname").text());
+		//email = $.trim($("#email").text());
+		dob =  $.trim($("#dob").text());
+		//country = $.trim($("#country").text());
+		publicWalletAddress = $.trim($("#publicWalletAddress").text());
+		company = $.trim($("#company").text());
+		
+
+		console.log("hhhh",firstname)
+				console.log("hhhh",lname)
+
+		//console.log("hhhh",email)
+		
+		var editableFN = $("<input style='width: 100%' type='text' name ='ajaxfirstname' maxlength='24' minlength='2' id=" + fullname +  " />");
+		var editableLN = $("<input style='width: 100%' type='text' name ='ajaxlastname'maxlength='24' minlength='2' id=" + lname +  " />");
+		//var editableEmail = $("<input type='text' name = 'ajaxemail' type='email' id=" + email +  " />");
+		var editableDob = $("<input style='width: 100%' name = 'ajaxdob' class ='neww' type='text'/ readonly='true' id='datefield'/>");
+		//var editableCountry = $("<input style='width: 100%' type='text'name = 'ajaxcountry' id=" + country +  " />");
+		var editablePublicWalletAddress = $("<input style='width: 100%' type='text' name = 'ajaxpublicWalletAddress'maxlength='42' id=" + publicWalletAddress +  " />");
+		var editableCompany = $("<input style='width: 100%' type='text'maxlength='30' minlength='4' name = 'ajaxcompany' id= " + company +  " />");
+		//var editableEmail = $("<input type='text' class='changed' onfocus='this.oldValue=this.value'/>");
+		editableFN.val(firstname);
+		editableLN.val(lname);
+		//editableEmail.val(email);
+		editableDob.val(dob);
+		//editableCountry.val(country);
+		editablePublicWalletAddress.val(publicWalletAddress);
+		editableCompany.val(company);
+
+		$("#fullname").replaceWith(editableFN);
+		$("#lastname").replaceWith(editableLN);
+		//$("#email").replaceWith(editableEmail);
+		$("#dob").replaceWith(editableDob);
+		//$("#country").replaceWith(editableCountry);
+		$("#publicWalletAddress").replaceWith(editablePublicWalletAddress);
+		$("#company").replaceWith(editableCompany);
+
+
+		$("#firstnamebut").hide();
+		$("#firstnamesave").show();
+		$("#firstnamecancel").show();
+		$("#datefield").datepicker({  maxDate: new Date() });
+
+/*
+var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth()+1; //January is 0!
+		var yyyy = today.getFullYear();
+		if(dd<10){
+				dd='0'+dd
+			} 
+			if(mm<10){
+				mm='0'+mm
+			} 
+
+today = yyyy+'-'+mm+'-'+dd;
+
+document.getElementsByName("ajaxdob")[0].setAttribute("max", today);
+datefield
+console.log("today",today);
+console.log("ajaxdob",document.getElementsByName("ajaxdob"));*/
+
+		
+			
+	}
+
+     
+	
+
+function editableTextBlurred() {
+    var html = $(this).val();
+    var viewableText = $("<div>");
+    viewableText.html(html);
+    $(this).replaceWith(viewableText);
+    // setup the click event for this new div
+    viewableText.click(divClicked);
+}
+$("#firstnamebut").click(function(){
+	console.log("Heyyy");
+	divClicked();
+})
+$("#firstnamesave").click(function() {
+
+})
+$("#firstnamecancel").click(function(){
+	location.reload();
+})
+ $("#datefield").datepicker({  maxDate: new Date() });
+ })
+
+       
+        
+
+  
+
+</script>
+
+	

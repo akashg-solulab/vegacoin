@@ -1,0 +1,130 @@
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="dash-coin-info text-center">
+                                <div class="title-table text-center">
+                                    <h2>Balance</h2>
+                                </div>
+                                <h3>{{dashboard.totalBalance}} <img src="{{constants.ACCESSURL}}img/logo-table.png" alt=""></h3>
+                                <!--<h4>&#36; {{#math dashboard.totalBalance '*' dashboard.tokenRate}}{{/math}}</h4>-->
+                                <!--                                <div class="dash-coin-one">
+                                                                    <label>Total Investment</label>
+                                                                    <h5>&#36; {{dashboard.totalInvestment}}</h5>
+                                                                </div>-->
+                                <div class="dash-coin-one">
+                                    <label>Net Worth</label>
+                                    <h5>&#36; {{dashboard.totalNetWorth}}</h5>
+                                </div>
+                                <!--                                <div class="dash-coin-one">
+                                                                    <label>Profit/Loss</label>
+                                                                    <h5><span>&#36; {{dashboard.profitLoss}}</span></h5>
+                                                                </div>-->
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="table-part balancesheet">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#bitcoin" data-toggle="tab">Bitcoin</a></li>
+                                    <li role="presentation" class=""><a href="#ethereum" data-toggle="tab">Ethereum</a></li>
+
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade" id="ethereum">
+                                        <form action="{{constants.ACCESSURL}}users/buy-with-ether" method="post">
+                                            <div class="blc-box">
+                                                <!--<img src="{{constants.ACCESSURL}}img/ethereumqr.png" />-->
+                                                <!--<h4>{{dashboard.defaultWallet.walletAddress}}</h4>-->
+                                                <div class="form-group">
+                                                    <input type="hidden" name="wallet_address" value="{{dashboard.defaultWallet.walletAddress}}"/>
+                                                    <input type="hidden" name="wallet_index" value="{{dashboard.defaultWallet.indexOfWallet}}"/>
+                                                    <input type="hidden" name="ckc_per_ether" value="{{dashboard.CKCPerEther}}"/>
+                                                    <input type="number" min="100" name="tokens" class="form-control" placeholder="Enter Number of Tokens" required="" />
+                                                </div>
+                                            </div>
+                                            <div class="blc-btn">
+                                                <button class="btn btn-primary" type="submit">Next</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade active in" id="bitcoin">
+                                        <form action="{{constants.ACCESSURL}}users/buyWithBitcoin" method="post" class="buyWithBTC">
+                                            <div class="blc-box">
+                                                <!--<img src="{{constants.ACCESSURL}}img/ethereumqr.png" />-->
+                                                <!--<h4>{{dashboard.bitcoinWalletAddress}}</h4>-->
+                                                <input type="hidden" name="wallet_address" value="{{dashboard.defaultWallet.walletAddress}}"/>
+                                                <input type="hidden" name="wallet_index" value="{{dashboard.defaultWallet.indexOfWallet}}"/>
+                                                <input type="hidden" name="ckc_per_btc" value="{{dashboard.CKCPerBitcoin}}"/>
+                                                <input type="hidden" name="buyerEmail" value="{{user.user.email}}"/>
+                                                <input type="hidden" name="redirecturl" value="{{constants.ACCESSURL}}"/>
+                                                <input type="hidden" name="notificationURL" value="{{constants.NOTIFICATION_OF_PAYMENT}}"/>
+                                                <div class="form-group">
+                                                    <input type="number" name="tokens" class="form-control" placeholder="Enter Number of Tokens" required="" min="100">
+                                                </div>
+                                            </div>
+                                            <div class="blc-btn">
+                                                <button class="btn btn-primary" type="submit">Next</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="table-part">
+                        <div class="title-table">
+                            <h2>Transaction History</h2>
+                        </div>
+                        <div class="history-table comman-table table-responsive">
+                            {{#ifCond transactions.length '>' 0 }}
+                            <table class="footable table table-stripped" data-page-size="10">
+                                <thead>
+                                    <tr>
+                                        <th data-sort-ignore="true"></th>
+                                        <th>To</th>
+                                        <th>From</th>
+                                        <th>Balance</th>															
+                                        <th>Type</th>
+                                        <th>Date and Time</th>
+                                        <th>Tx Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each transactions}}
+                                    <tr>
+                                        {{#ifCond this.transactionType "==" "buy"}}
+                                        <td><img src="{{constants.ACCESSURL}}/img/table-down-arrow.png" alt=""></td>
+                                        {{else}}
+                                        <td><img src="{{constants.ACCESSURL}}/img/table-up-arrow.png" alt=""></td>
+                                        {{/ifCond}}
+                                        <td>{{this.to}}</td>
+                                        <td>{{this.from}}</td>
+                                        <td>{{#ifCond this.transactionType "==" "buy"}}+{{else}}-{{/ifCond}}{{#math this.coins "/" "1000000000000000000"}}{{/math}} <img src="{{constants.ACCESSURL}}/img/logo-table.png" alt=""></td>
+                                        <td>{{#ifCond this.transactionType "==" "buy"}}Receive{{else}}Send{{/ifCond}}</td>
+                                        <td>{{formatDate this.date}}</td>
+                                        <td>{{ this.transactionStatus }}</td>
+                                    </tr>
+                                    {{/each}}
+
+                                </tbody>
+                            </table>
+                            {{/ifCond}}
+                            {{#ifCond transactions.length '==' 0 }}
+                            <h3>No Transactions Found</h3>
+                            {{/ifCond}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

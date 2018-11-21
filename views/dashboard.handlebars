@@ -1,0 +1,378 @@
+
+	<div class="container-fluid npl npr brand-color-bg" style="position: relative;min-height: 530px;">
+	  <div class="container">
+	    <div class="row">
+	      <div class="col-md-12 text-white p-5 text-left">
+	        <div class="text-left">
+	          <h1 class="animated slideInDown" style="font-size: 40px; margin-top: 137px; font-weight: 600;">Crowdsale <span>Dashboard</span> </h1>
+	        </div>
+	      
+	        <div class="container-fluid" style="margin-bottom: 50px;">
+	        	<div class="row timeline-row animated slideInDown" id="timeline-container" style="margin-top: 50px; position: relative;">
+	          <div class="pl-0 pr-0 col-xs-6 col-sm-4 col-md-2 text-left timeline-section">
+	            <div class="timeline-section-top"><h4 class="p-0" style="font-size: 20px;">Bonus {{objvar.r1bonus}}%			
+							</h4></div>
+	            <div class="timeline-section-middle">
+								{{#ifCond objvar.roundNumber "==" 0 }}
+									<h4>Not Started</h4>
+								{{/ifCond }}	
+
+								
+								{{#ifCond objvar.roundNumber "==" 1  }}	
+									{{#ifCond objvar.roundCondition "==" true }} 
+									<h4>In Progress</h4>
+									{{/ifCond}}
+									{{#ifCond objvar.roundCondition "==" false }}
+									<h4>Ended</h4>
+									{{/ifCond}}	
+								{{/ifCond}}	
+								
+
+								{{#ifCond objvar.roundNumber '>' 1 }}
+									<h4>Ended</h4>
+								{{/ifCond}}	
+											
+							</div>
+	            <div class="timeline-section-bottom">ROUND 1</div>
+	          </div>
+	           <div class="pl-0 pr-0 col-xs-6 col-sm-4 col-md-2 text-left timeline-section">
+	            <div class="timeline-section-top"><h4 class="p-0" style="font-size: 20px;">Bonus {{objvar.r2bonus}}%</h4></div>
+	            <div class="timeline-section-middle">
+
+								{{#ifCond objvar.roundNumber '<' 2}}
+										<h4>Not Started</h4>
+								{{/ifCond}}		
+										
+									
+									{{#ifCond objvar.roundNumber "==" 2}}	
+										{{#ifCond objvar.roundCondition  "==" true }}
+										<h4>In Progress</h4>
+										{{/ifCond}}
+										{{#ifCond objvar.roundCondition "==" false }}
+										<h4>Ended</h4>
+										{{/ifCond}}
+									{{/ifCond}}
+
+								{{#ifCond objvar.roundNumber '>' 2 }}
+									<h4>Ended</h4>
+								{{/ifCond}}			
+
+							</div>
+	            <div class="timeline-section-bottom">ROUND 2</div>
+	          </div>
+	          <div class="pl-0 pr-0 col-xs-6 col-sm-4 col-md-2 text-left timeline-section">
+	            <div class="timeline-section-top"><h4 class="p-0" style="font-size: 20px;">Bonus {{objvar.r3bonus}}%</h4></div>
+	            <div class="timeline-section-middle">
+								{{#ifCond objvar.roundNumber '<' 3}}
+										<h4>Not Started</h4>
+								{{/ifCond}}		
+										
+								{{#ifCond objvar.roundNumber "==" 3}}	
+									{{#ifCond objvar.roundCondition "==" true }}
+										<h4>In Progress</h4
+										{{/ifCond}}
+										{{#ifCond objvar.roundCondition "==" false }}
+										<h4>Ended</h4>
+										{{/ifCond}}
+									{{/ifCond}}	
+
+									{{#ifCond objvar.roundNumber '>' 3}}
+										<h4>Ended</h4>
+								{{/ifCond}}
+							</div>
+	            <div class="timeline-section-bottom">ROUND 3</div>
+	          </div>
+	          <div class="pl-0 pr-0 col-xs-6 col-sm-4 col-md-2 text-left timeline-section">
+	            <div class="timeline-section-top"><h4 class="p-0" style="font-size: 20px;">Bonus {{objvar.r4bonus}}%</h4></div>
+	            <div class="timeline-section-middle">
+								{{#ifCond objvar.roundNumber '<' 4}}
+										<h4>Not Started</h4>
+								{{/ifCond}}		
+										
+									
+									{{#ifCond objvar.roundNumber "==" 4}}	
+										{{#ifCond objvar.roundCondition "==" true }}
+										<h4>In Progress</h4>
+										{{/ifCond}}
+										{{#ifCond objvar.roundCondition "==" false }}
+										<h4>Ended</h4>
+										{{/ifCond}}
+									{{/ifCond}}	
+
+									{{!-- {{#ifCond  objvar.roundNumber "==" 4  "&&" objvar.roundCondition "==" false}}	
+										{{!-- {{#ifCond objvar.roundCondition "==" false }} --}}
+											{{!-- <h4></h4> --}}
+
+
+								{{#ifCond objvar.roundNumber '>' 4}}
+										<h4>Ended</h4>
+								{{/ifCond}}
+							</div>
+	            <div class="timeline-section-bottom">ROUND 4</div>
+	          </div>
+	          <div class="pl-0 pr-0 col-xs-6 col-sm-4 col-md-2 text-left timeline-section">
+	            <div class="timeline-section-top"><h4 class="p-0" style="font-size: 20px;">Bonus {{objvar.r5bonus}}%</h4></div>
+	            <div class="timeline-section-middle">
+								{{#ifCond objvar.roundNumber '<' 5}}
+										<h4>Not Started</h4>
+								{{/ifCond}}		
+										
+									
+									{{#ifCond objvar.roundNumber "==" 5}}	
+										{{#ifCond objvar.roundCondition "==" true }}
+										<h4>In Progress</h4>
+										{{/ifCond}}
+										{{#ifCond objvar.roundCondition "==" false }}
+										<h4>Ended</h4>
+										{{/ifCond}}
+									{{/ifCond}}	
+
+									{{#ifCond objvar.roundNumber ">" 5}}
+										<h4>Ended</h4>
+								{{/ifCond}}
+							</div>
+	            <div class="timeline-section-bottom">ROUND 5</div>
+	          </div>
+	          <div class="pl-0 pr-0 col-xs-6 col-sm-4 col-md-2 text-left timeline-section">
+	            <div class="timeline-section-top"><h4 class="p-0" style="font-size: 20px;">Bonus {{objvar.r6bonus}}%</h4></div>
+	            <div class="timeline-section-middle">
+								{{#ifCond objvar.roundNumber '<' 6}}
+										<h4>Not Started</h4>
+								{{/ifCond}}		
+																			
+									{{#ifCond objvar.roundNumber "==" 6}}	
+										{{#ifCond objvar.roundCondition "==" true }}
+										<h4>In Progress</h4>
+										{{/ifCond}}
+										{{#ifCond objvar.roundCondition "==" false }}
+										<h4>Ended</h4>
+										{{/ifCond}}
+								{{/ifCond}}
+
+							</div>
+	           	<div class="timeline-section-bottom">ROUND 6</div>
+	          </div>
+	          <!-- <img class="animated" id="timeline-gear" src="./dashboard_files/148912.svg" style="position: absolute; left: 350px; top: 37px; z-index: 100; transform: rotate(350deg);" width="30">                           -->
+	        </div>       
+	        </div>
+	      </div>
+	    </div>    
+	  </div>	  	
+		<div class="dashboardwave">
+		  	<svg class="wave_bottom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 347.1" preserveAspectRatio="none">
+				<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="959.9996" y1="312.5311" x2="959.9996" y2="-1405.3223">
+					<stop offset="0" style="stop-color:#f4fcff"></stop>
+					<stop offset="8.581323e-02" style="stop-color:#F7F9FE"></stop>
+					<stop offset="0.2183" style="stop-color:#E1E7FC"></stop>
+					<stop offset="0.3808" style="stop-color:#BECAF9"></stop>
+					<stop offset="0.5671" style="stop-color:#8DA2F5"></stop>
+					<stop offset="0.7737" style="stop-color:#4E6EF0"></stop>
+					<stop offset="0.9942" style="stop-color:#0231E9"></stop>
+					<stop offset="1" style="stop-color:#002FE9"></stop>
+				</linearGradient>
+				<path class="st0" style="fill:url(#SVGID_1_);" d="M0,146.9v-118c0,0,204.7-42.1,470.5-25.4s340.2,56.7,569,104.2s456.3,45.6,549.8,48.8
+					c93.5,3.2,330.7-0.8,330.7-0.8s-171-22.9-340.3,26.3S712.2,71.2,454.2,71.2S0,146.9,0,146.9z"></path>
+				<path class="st1" style="fill:#f4fcff;" d="M1920,0v162.8c0,0.2,0,0.3,0,0.5c-315,79.3-632.9,18.5-951.4-66.3C644.3,8.5,321.2-20.3,0,36.8V0H1920z"></path>
+			</svg>
+		</div>
+	</div>
+
+	<div class="container-fluid afterbanner" style="background-color: #f4fcff;" >
+	  <div class="container" style="margin-top: 40px;">
+	    <div class="row">
+	      <div class="col-xs-6 col-md-2 text-center" style="border-right: thin solid #9acce0;min-height: 52px;">
+	        <h3 style="font-size: 18px;font-weight: 300; color: #166888;">
+					 
+						{{objvar.SoftCap}} ETH
+	          <br>
+	          <span style="font-size: 16px;">Soft Cap</span>
+						
+	        </h3>
+	      </div>
+	      <div class="col-xs-6 col-md-2 text-center" style="border-right: thin solid #9acce0;min-height: 52px;">
+	        <h3 style="font-size: 18px;font-weight: 300; color: #166888;">
+						{{objvar.HardCap}} ETH
+						<br>
+	          <span style="font-size: 16px;">Hard cap</span>
+	        </h3>
+	      </div>      
+	      <div class="col-xs-6 col-md-2 text-center" style="border-right: thin solid #9acce0;min-height: 52px;">
+	        <h3 style="font-size: 18px;font-weight: 300; color: #166888;">
+	        {{objvar.ICOSupply}}M
+					
+						<br>
+	          <span style="font-size: 16px;">Total ICO Supply</span>
+	        </h3>
+	      </div>
+	      <div class="col-xs-6 col-md-2 text-center" style="border-right: thin solid #9acce0;min-height: 52px;">
+	        <h3 style="font-size: 18px;font-weight: 300; color: #166888;">
+					{{objvar.RatePerEther}} Tokens	
+						<br>
+	          <span style="font-size: 16px;">Equals 1 ETH</span>
+	        </h3>
+	      </div>
+	      <div class="col-xs-6 col-md-2 text-center" style="border-right: thin solid #9acce0;min-height: 52px;">
+	        <h3 style="font-size: 18px;font-weight: 300; color: #166888;">
+					{{!-- {{objvar.RatePerEther}} --}}
+
+					{{!-- {{#ifCond objvar.startsin "<" 0}}
+							{{#ifCond objvar.endsin "<" 0}}
+								<h4>ICO has ended</h4>
+							{{/ifCond}}
+					{{/ifCond}} --}}
+
+						{{!-- {{#ifCond objvar.endsin '<' 0}} --}}
+								<h4 style="margin-top: 0px;color: #166888;">{{objvar.msg}}</h4>
+						{{!-- {{/ifCond}} --}}
+
+						{{!-- {{#ifCond objvar.startsin '<' 0}}
+							{{#ifCond objvar.endsin '>=' 0}}
+								{{#ifCond objvar.roundNumber "<" 6 }}	
+									<h4 style="margin-top: 0px;color: #166888;"> ICO ends in {{objvar.endsin}} days </h4>
+								{{/ifCond}}	
+							{{/ifCond}} 
+						{{/ifCond}}	
+							
+						{{#ifCond objvar.startsin '<' 0}}
+							{{#ifCond objvar.endsin '>=' 0}}
+								{{#ifCond objvar.roundNumber "==" 6}}	
+									{{#ifCond objvar.roundCondition "==" true }}
+										<h4 style="margin-top: 0px;color: #166888;"></h4>ICO ends in {{objvar.endsin}} days</h4>
+									{{/ifCond}}		
+								{{/ifCond}}	
+							{{/ifCond}}
+						{{/ifCond}}		
+						
+					{{#ifCond objvar.startsin '<' 0}}	
+						{{#ifCond objvar.endsin '>=' 0}}
+							{{#ifCond objvar.roundNumber "==" 6}}	
+								{{#ifCond objvar.roundCondition "==" false }}
+									<h4 style="margin-top: 0px;color: #166888;">ICO has Ended </h4>
+								{{/ifCond}}		
+							{{/ifCond}}	
+						{{/ifCond}}
+					{{/ifCond}}	 --}}
+	          {{!-- <span style="font-size: 16px;">	
+
+							{{#ifCond objvar.startsin '>' 0}}
+								{{#ifCond objvar.roundNumber "<" 6}}	
+								<h4 style="margin-top: 0px;color: #166888;">ICO Starts in {{objvar.startsin}} days </h4>
+								{{/ifCond}}
+							{{/ifCond}}
+					{{!-- {{#ifCond objvar.startsin "<" 0}}
+							{{#ifCond objvar.startsin "<" 0}}
+								<h4>ICO has ended</h4>
+							{{/ifCond}}
+					{{/ifCond}} --}}
+							{{!-- {{#ifCond objvar.startsin "<" 0}}
+								<h4></h4>
+							{{/ifCond}} --}}
+
+						
+						{{!-- </span> --}} 
+	        {{!-- </h3> --}}
+	      </div>
+	      <div class="col-xs-6 col-md-2 text-center">
+	        <h3 style="font-size: 18px;font-weight: 300; color: #166888;">
+					{{!-- {{objvar.RatePerEther}} --}}ETH
+						<br>
+	          <span style="font-size: 16px;">Currency</span>
+	        </h3>
+	      </div>                             
+	    </div>
+	    
+	  </div>
+	  <div class="container-fluid" style="margin-top:40px; margin-bottom: 50px; max-width: 1200px;">
+	  <div class="row">
+	    <div class="col col-sm-4 nrp padding-right-mobile" style="margin-bottom: 15px;">
+	      	<div  class="white-bg white-bg-shadow" style="padding: 30px; min-height: 294px;">
+				<h3  style="margin-bottom: 40px;">Balance</h3>
+
+				<h1  style="font-size: 50px;">{{objvar.balance}}</h1>
+				<span  class="text-muted">AAA</span>
+
+				<!-- <button  class="btn prim-btn-outline btn-block btn-lg-txt btn-lg-outline" style="margin-top: 40px;"> Contribute now</button> -->
+			</div>
+	    </div>
+
+	    <div class="col col-sm-8 padding-left-mobile" style="margin-bottom: 15px;">
+	    	<div  class="white-bg break-txt white-bg-shadow" style="padding: 30px; font-size: 12px; min-height: 294px;">
+				<h4  style="margin-bottom: 20px;">Pay with Ethereum</h4>
+				<div  class="row">
+					
+				  <div  class="col-sm-4 pr-0">
+					
+				    <img  class="img-fluid img-responsive" src="{{url}}">
+				  </div>
+				  <div  class="col-sm-8">
+			{{!-- style="display:none;" --}}
+				    <textarea id="abcde">{{constants.CONTRACT_ADDRESS}}</textarea>
+				    <div  class="text-muted" style="color: #333;">Minimum payment 0.1 ETH</div>
+				    <br>
+				    <button  class="btn prim-btn-outline btn-sm" id="abcd" style="padding: 5px 20px;">Copy address</button>
+				  </div>
+				</div>
+				<div  class="row" style="margin-top: 15px;">
+				  
+				</div>
+			</div>
+	    </div> 
+
+	  </div>
+
+	  </div>
+	</div>
+	<script>
+var copyTextareaBtn = document.getElementById('abcd');
+
+copyTextareaBtn.addEventListener('click', function(event) {
+  var copyTextarea = document.getElementById('abcde');
+  copyTextarea.select();
+
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Copying text command was ' + msg);
+  } catch (err) {
+    console.log('Oops, unable to copy');
+  }
+});
+
+/*
+
+            window.onbeforeunload = function (e) {
+                var message = "Are you sure ?";
+                var firefox = /Firefox[\/\s](\d+)/.test(navigator.userAgent);
+                if (firefox) {
+                    //Add custom dialog
+                    //Firefox does not accept window.showModalDialog(), window.alert(), window.confirm(), and window.prompt() furthermore
+                    var dialog = document.createElement("div");
+                    document.body.appendChild(dialog);
+                    dialog.id = "dialog";
+                    dialog.style.visibility = "hidden";
+                    dialog.innerHTML = message;
+                    var left = document.body.clientWidth / 2 - dialog.clientWidth / 2;
+                    dialog.style.left = left + "px";
+                    dialog.style.visibility = "visible";
+                    var shadow = document.createElement("div");
+                    document.body.appendChild(shadow);
+                    shadow.id = "shadow";
+                    //tip with setTimeout
+                    setTimeout(function () {
+                        document.body.removeChild(document.getElementById("dialog"));
+                        document.body.removeChild(document.getElementById("shadow"));
+                    }, 0);
+                }
+                return message;
+            };*/
+						/*
+window.addEventListener("beforeunload", function (e) {
+  var confirmationMessage = "\o/";
+
+  (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+  return confirmationMessage;                            //Webkit, Safari, Chrome
+});*/
+
+   // window.onbeforeunload = function() { return "Your work will be lost."; };
+
+</script>

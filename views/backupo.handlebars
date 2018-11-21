@@ -1,0 +1,253 @@
+  	<header class="fixed-header">
+		<div class="container-fluid">
+    		<div class="row">
+      			<div class="col-lg-12">
+		          	<img class="dash-logo pull-left" src="{{constants.ACCESSURL}}dashboard_files/logo.png" width="30" />
+		          	<img class="dash-logo pull-left" src="{{constants.ACCESSURL}}dashboard_files/logo-txt.png" style="position: relative;top: 7px; margin-left: 15px;" width="80" />
+					<ul class="list-inline main-nav" style="float: right">
+						<li class="list-inline-item" style="
+					    border-right: thin solid #bdbdbd;
+					    padding-right: 15px;
+					    margin-right: 11px;
+					    top: -4px;
+					    position: relative;
+					    "> <strong _ngcontent-c9="">Balance:</strong> 232 CLC </li>
+						<!-- <li _class="list-inline-item" style="padding-right: 30px; position: relative;">
+							<app-search-bar nghost-c10="">		<input _ngcontent-c10="" class="search-input" name="" placeholder="Search by Address / Txhash / Block / Token / Ens" type="text">
+							<button _ngcontent-c10="" class="btn " style="    background-color: #f9f9f9;
+					    border-color: #cacaca; position: absolute;
+					    right: 28px;
+					    top: 6px;
+					    border-radius: 20px;
+					    padding: 1px 12px;
+					    ">
+							<i _ngcontent-c10="" class="material-icons" style="
+					    color: #d60000;
+					    top: 3px;
+					    position: relative;
+					    right: -1px;
+					">
+							search
+							</i>
+					    </button></app-search-bar>
+						</li> -->
+						<li class="list-inline-item" style="top: -5px;position: relative;border-right: thin solid #bdbdbd; padding-right: 14px; font-weight: bold; ">Christopher</li>
+						
+						<li class="list-inline-item"><a href="dashboard.html"><i class="material-icons">dashboard</i></a></li>
+						<li class="list-inline-item"><a href="transactions.html" ><i class="material-icons">receipt</i></a></li>
+						<li class="list-inline-item">
+							<div class="dropdown" style="position: relative;top: 4px;left: -12px;">
+							  <a _aria-expanded="false" aria-haspopup="true" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" href="#" id="dropdownMenuLink" role="button">
+									<i class="material-icons" style="font-size: 30px;">
+									arrow_drop_down
+									</i>
+							  </a>
+
+							  <div class="dropdown-menu dropdown-menu-right">
+							    <a class="dropdown-item" href="setting.html">Settings</a>
+							    <a class="dropdown-item" href="login.html">Logout</a>
+							  </div>
+							</div>		
+						</li>
+					</ul>
+      			</div>
+    		</div>		
+		</div>
+	</header>
+
+	<div class="container-fluid white-bg bb" style="margin-top: 60px; box-shadow: 1px 1px 1px rgba(0,0,0,0.1);">
+		<div class="container mw-900 br bl">
+			<div class="row">
+				<div class="col-md-3 npr npl">
+					<ul class="list-unstyled sidenav-2">
+						<li _ngcontent-c14=""> 
+							<a href="setting.html">
+								<i class="material-icons">
+								settings
+								</i>							
+								General
+							</a>
+						</li>
+						<li _ngcontent-c14=""> 
+							<a href="security.html">
+								<i class="material-icons">
+								lock
+								</i>							
+								Security
+							</a>
+						</li>	
+						<!-- <li _ngcontent-c14=""> 
+							<a href="wallet.html">
+								<i class="material-icons">
+								account_balance_wallet
+								</i>							
+								Wallet
+							</a>
+						</li> -->									
+					</ul>
+				</div>
+				<div class="col-md-9 bl form-toggler-container">
+					
+					<div class="row">
+						<div class="col-md-12 bb">
+							<h4 class="title-bb">General Account Setttings</h4>
+														{{!-- <lable class="abcd">{{profile.fullName}}</lable> --}}
+
+						</div>
+					</div>
+
+					<div class="row bb hoverable-row p-rel" style="padding: 15px;">
+					
+						<div class="col-md-3" style="font-size: 12px;">
+							<strong>Full name</strong>
+						</div>
+						<div class="col-md-6">
+							<span id="fullname">{{profile.fullName}}</span>
+						</div>
+				
+
+							<input type="button" value="save" id="firstnamesave" style="display:none"> 
+							<input type="button" value="cancel" id="firstnamecancel" style="display:none">
+
+						
+					</div>
+
+				<!--	<div class="row form-toggler-content bb" style="display: none;">
+						<div class="col-md-12">
+							<div style="padding: 20px;">
+								
+								<div>
+									<label >Full name</label>
+									<input name="name" value="Christopher Kendrick" type="text">				
+								</div>
+								<div class="clearfix" style="margin-top: 10px;">
+									<button class="btn btn-secondary pull-left form-toggler-close">Cancel</button>
+									<button class="btn btn-primary pull-right">Save</button>
+								</div>
+							</div>
+						</div>
+					</div>-->
+					<div class="row bb hoverable-row p-rel" style="padding: 15px;">
+						<a class="full-link toggle-link" href="#"></a>
+						<div class="col-md-3" style="font-size: 12px;">
+							<strong >Email</strong>
+						</div>
+						<div class="col-md-6">
+							<span id="email">{{profile.email}}</span>
+						</div>
+
+					</div>
+
+					
+					<div class="row bb hoverable-row p-rel" style="padding: 15px;">
+						<a class="full-link toggle-link" href="#"></a>
+						<div class="col-md-3" style="font-size: 12px;">
+							<strong >DOB</strong>
+						</div>
+						<div class="col-md-6">
+							<div class="abcdef" >{{profile.dob}}</div>
+						</div>
+					
+					</div>
+
+					<div class="row bb hoverable-row p-rel" style="padding: 15px;">
+						<a class="full-link toggle-link" href="#"></a>
+						<div class="col-md-3" style="font-size: 12px;">
+							<strong >Country</strong>
+						</div>
+						<div class="col-md-6">
+							<div class="abcdefg" >{{profile.country}}</div>
+						</div>
+						
+					</div>
+
+					
+					<div class="row bb hoverable-row p-rel" style="padding: 15px;">
+						<a class="full-link toggle-link" href="#"></a>
+						<div class="col-md-3" style="font-size: 12px;">
+							<strong >Wallet Address</strong>
+						</div>
+						<div class="col-md-6">
+							<div class="abcdefgh" >{{profile.publicWalletAddress}}</div>
+						</div>
+						
+					</div>
+
+					
+					<div class="row bb hoverable-row p-rel" style="padding: 15px;">
+						<a class="full-link toggle-link" href="#"></a>
+						<div class="col-md-3" style="font-size: 12px;">
+							<strong >Company</strong>
+						</div>
+						<div class="col-md-6">
+							<div class="abcdefghi" >{{profile.company}}</div>
+						</div>
+				
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<input type="button" value="edit" id="firstnamebut">
+
+    <script src="{{constants.ACCESSURL}}dashboard_files/jquery-ui.js"></script>
+	<script type="text/javascript" src="{{constants.ACCESSURL}}dashboard_files/inline.js"></script>
+	<script type="text/javascript" src="{{constants.ACCESSURL}}dashboard_files/polyfills.js"></script>
+	<script type="text/javascript" src="{{constants.ACCESSURL}}dashboard_files/styles.js"></script>
+	<script type="text/javascript" src="{{constants.ACCESSURL}}dashboard_files/vendor.js"></script>
+	<script type="text/javascript" src="{{constants.ACCESSURL}}dashboard_files/main.js"></script>
+<script>
+    
+
+$(document).ready(function() {
+	function divClicked() {
+		console.log("hello");
+		firstname = $.trim($("#fullname").text());
+		email = $.trim($("#email").text());
+		console.log("hhhh",firstname)
+		console.log("hhhh",email)
+		
+		var editableFN = $("<input type='text' id=" + fullname +  " />");
+		var editableEmail = $("<input type='text' class='changed' onfocus='this.oldValue=this.value'/>");
+		editableFN.val(firstname);
+		editableEmail.val(email);
+		$("#fullname").replaceWith(editableFN);
+		$("#email").replaceWith(editableEmail);
+		$("#firstnamebut").hide();
+		$("#firstnamesave").show();
+		$("#firstnamecancel").show();
+		// setup the blur event for this new textarea
+	//  editableText.blur(editableTextBlurred);	
+	}	
+
+function editableTextBlurred() {
+    var html = $(this).val();
+    var viewableText = $("<div>");
+    viewableText.html(html);
+    $(this).replaceWith(viewableText);
+    // setup the click event for this new div
+    viewableText.click(divClicked);
+}
+$("#firstnamebut").click(function(){
+	console.log("Heyyy");
+	divClicked();
+})
+$("#firstnamesave").click(function() {
+
+})
+$("#firstnamecancel").click(function(){
+	
+	var fn = $("<div id=" + firstname+  "> /div>");
+	$("#fullname").replaceWith(fn)
+	$("#firstnamebut").show();
+	$("#firstnamesave").hide();
+	$("#firstnamecancel").hide();
+})
+ })
+
+
+</script>
+
+	

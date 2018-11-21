@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vega</title>
+
+    <meta name="description" content="Vega is a first of it’s kind digital marketing tracking platform that redefines security, decentralized storage and ease of use.">
+
+    <link rel="stylesheet" type="text/css" href="{{constants.ACCESSURL}}dashboard_files/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{constants.ACCESSURL}}dashboard_files/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="{{constants.ACCESSURL}}dashboard_files/animate.css">
+	
+
+    <link rel="stylesheet" type="text/css" href="{{constants.ACCESSURL}}dashboard_files/bootstrap-slider.css">
+
+    <link href="{{constants.ACCESSURL}}dashboard_files/all.css" rel="stylesheet">
+    <link href="{{constants.ACCESSURL}}dashboard_files/css.css" rel="stylesheet">
+    <link href="{{constants.ACCESSURL}}dashboard_files/css_002.css" rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="192x192" href="{{constants.ACCESSURL}}dashboard_files/logo.png">
+
+    
+    <link rel="stylesheet" type="text/css" href="{{constants.ACCESSURL}}dashboard_files/register.css">
+
+    <link href="{{constants.ACCESSURL}}dashboard_files/css_003.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{{constants.ACCESSURL}}fonts/fontawesome/font-awesome.css" />
+    <link href="{{constants.ACCESSURL}}css/jquery.toast.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" rel="stylesheet" type="text/css">
+
+    <!-- jQuery library -->
+    <!-- <script type="text/javascript" async="" src="./dashboard_files/recaptcha__en.js"></script> -->
+    <script src="{{constants.ACCESSURL}}dashboard_files/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/additional-methods.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js" type="text/javascript"></script>
+    <!-- Latest compiled JavaScript -->
+    <!-- <script src="./dashboard_files/jquery-2.js"></script> -->
+    <!-- <script src="./dashboard_files/reg-jquery.js"></script> -->
+    <script src="{{constants.ACCESSURL}}dashboard_files/bootstrap.js"></script>
+
+    <!-- <script src="./dashboard_files/api.js"></script> -->
+
+    <link href="{{constants.ACCESSURL}}dashboard_files/icon.css" rel="stylesheet">
+
+    <!-- <script src="./dashboard_files/js.js"></script> -->
+    <!-- <script src="./dashboard_files/easytimer.min.js"></script> -->    
+    <!-- <script type="text/javascript" charset="UTF-8" src="./dashboard_files/common.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="./dashboard_files/util.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="./dashboard_files/stats.js"></script> -->
+
+    <link rel="stylesheet" type="text/css" href="{{constants.ACCESSURL}}dashboard_files/style.css">
+
+    </head>
+
+<body>
+    {{#if errors}}
+      {{#each errors}}
+        <!--<div class="alert alert-danger">{{this.msg}}</div>-->
+        {{this}}
+      {{/each}}
+    {{/if}}
+
+    {{{body}}}
+    {{> footer}}

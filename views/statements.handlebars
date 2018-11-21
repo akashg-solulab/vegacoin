@@ -1,0 +1,109 @@
+<div class="wrapper wrapper-content">
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="wallet-top clearfix">
+                        <div class="wallet-box">
+                            <h3>Balance <strong>{{statement.balance}}</strong> <img src="{{constants.ACCESSURL}}img/logo.png" alt=""></h3>
+                        </div>
+                        <div class="wallet-export-link">
+                            <input type="hidden" class="statementtype" value="{{type}}"/>
+                            <a class="downloadbutton hide" download>Newsletter</a>
+                            <a href="{{constants.ACCESSURL}}users/statements-download" class="downloadStatements"><img src="{{constants.ACCESSURL}}img/pdf-icon.png" alt=""></a>
+                            <!--<a href="#"><img src="{{constants.ACCESSURL}}img/excel-icon.png" alt=""></a>-->
+                        </div>
+                        <div class="wallet-sl-box clearfix">
+                            <ul>
+                                <li class="{{#ifCond type '==' 'B'}}active{{/ifCond}}"><a href="{{constants.ACCESSURL}}users/statements?type=B">Bitcoin</a></li>
+                                <li class="{{#ifCond type '==' 'E'}}active{{/ifCond}}"><a href="{{constants.ACCESSURL}}users/statements?type=E">Ethereum</a></li>
+                                <li class="{{#ifCond type '==' 'C'}}active{{/ifCond}}"><a href="{{constants.ACCESSURL}}users/statements?type=C">CLC</a></li>
+                            </ul>
+                        </div>
+                    </div>	  
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">        
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="table-part">
+                        <div class="title-table">
+                            <h2>Transaction History</h2>
+                        </div>
+                        <div class="history-table comman-table table-responsive">
+                            {{#ifCond statement.transactions.length '>' 0 }}
+                            <table class="footable table table-stripped statements" data-page-size="10" data-paging="true">
+                                <thead>
+                                    <tr>
+                                        <th data-sort-ignore="true"></th>
+                                        <th>To</th>
+                                        <th>From</th>
+                                        <th>Balance</th>															
+                                        <th>Type</th>
+                                        <th>Date and Time</th>
+                                        <th>Tx Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each statement.transactions}}
+                                    <tr>
+                                        {{#ifCond this.type "==" "receive"}}
+                                        <td><img src="{{constants.ACCESSURL}}/img/table-down-arrow.png" alt=""></td>
+                                        {{/ifCond}}
+                                        {{#ifCond this.type "==" "send"}}
+                                        <td><img src="{{constants.ACCESSURL}}/img/table-up-arrow.png" alt=""></td>
+                                        {{/ifCond}}
+                                        {{#ifCond this.type "==" "buy"}}
+                                        <td><img src="{{constants.ACCESSURL}}/img/table-down-arrow.png" alt=""></td>
+                                        {{/ifCond}}
+                                        {{#ifCond this.type "==" "sell"}}
+                                        <td><img src="{{constants.ACCESSURL}}/img/table-down-arrow.png" alt=""></td>
+                                        {{/ifCond}}
+                                        <td>{{this.to}}</td>
+                                        <td>{{this.from}}</td>
+                                        {{#ifCond this.type "==" "receive"}}
+                                        <td>+ {{this.value}} {{this.currency}}</td>
+                                        {{/ifCond}}
+                                        {{#ifCond this.type "==" "send"}}
+                                        <td>- {{this.value}} {{this.currency}}</td>
+                                        {{/ifCond}}
+                                        {{#ifCond this.type "==" "buy"}}
+                                        <td>+ {{this.value}} {{this.currency}}</td>
+                                        {{/ifCond}}
+                                        {{#ifCond this.type "==" "sell"}}
+                                        <td>- {{this.value}} {{this.currency}}</td>
+                                        {{/ifCond}}
+                                        <td>{{this.type}}</td>
+                                        <td>{{formatDate this.date}}</td>
+                                        <td>{{this.transactionStatus}}</td>
+                                        <td><a href="{{ this.txURL }}" target="_blank">View More</a></td>
+                                    </tr>
+                                    {{/each}}
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="5">
+                                            <ul class="pagination pull-right"></ul>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            {{/ifCond}}
+                            {{#ifCond statement.transactions.length '==' 0 }}
+                            <h3>No Transactions Found</h3>
+                            {{/ifCond}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,165 @@
+
+    <div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="text-center profile-element"> 
+                            <span>
+                                <img alt="image" class="" src="{{constants.ACCESSURL}}/dashboard_files_admin/img/profile_small.png"/>
+                            </span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="block m-t-xs"> <strong class="font-bold">Admin</strong></span>
+                            </a>
+                        </div>
+                        <div class="logo-element">
+                            <img src="{{constants.ACCESSURL}}/dashboard_files_admin/img/logo.png">
+                        </div>
+                    </li>
+                    <li>
+                        <a href="bounty-transfer"><i class="fa fa-th-large"></i><span class="nav-label">Token Distribution</span></a>
+                    </li>
+                    
+                    <li class="active">
+                        <a href="bounty-transactions"><i class="fa fa-history"></i> <span class="nav-label">History</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message">Welcome to Vega Admin.</span>
+                </li>
+                <li>
+                    <a href="logout">
+                        <i class="fa fa-sign-out"></i> Log out
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Transactions History</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="table-responsive" style="overflow-x:auto;">
+                                <table class="table table-bordered table-striped table-hover dataTables-example">
+                                    <thead>
+                                    <tr>
+                                        <th>TxHash</th>
+                                        <th>Date</th>
+                                        <th scope="col" width="150">To</th>
+                                        <th>Tokens</th>
+                                        {{!-- <th>Status</th> --}}
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {{#ifCond trans.len ">" 0}}
+
+                                    {{#each trans.t1}}
+
+                                    <tr>
+                                        <td>
+                                        <div _ngcontent-c12="" class="truncate-150">
+                                            <a _ngcontent-c12="" target="_blank" href="https://ropsten.etherscan.io/tx/{{this.TxHash}}">
+                                                                                        {{this.TxHash}}
+
+                                            </a>
+                                        </div>
+                                        </td>
+                                            
+                                        <td>{{this.Date}}</td>
+
+                                        <td scope="row">
+                                                
+                                            
+                                            {{this.to}}
+                                            
+                                            
+                                        </td>
+                                        <td>{{this.tokens}}</td>
+                                      
+                                    </tr>
+                                    
+                                    {{/each}}  
+
+                                    {{/ifCond}}
+
+                                    {{!-- <tr>
+                                        <td>2</td>
+                                        <td>31 Aug 2018</td>
+                                        <td>0x624D5050b12154Eb29BEc54B8faAeC3A3c01bDD6</td>
+                                        <td>20</td>
+                                        <td class="text-navy"> Pending </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>31 Aug 2018</td>
+                                        <td>0x624D5050b12154Eb29BEc54B8faAeC3A3c01bDD6</td>
+                                        <td>20</td>
+                                        <td class="text-success"> Paid </td>
+                                    </tr> --}}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="footer">
+            <div>
+                <strong>Copyright</strong> Vega &copy; 2018-2019
+            </div>
+        </div>
+
+        </div>
+        </div>
+
+
+
+    <!-- Mainly scripts -->
+    <script src="{{constants.ACCESSURL}}/dashboard_files_admin/js/jquery-2.1.1.js"></script>
+    <script src="{{constants.ACCESSURL}}/dashboard_files_admin/js/bootstrap.min.js"></script>
+    <script src="{{constants.ACCESSURL}}/dashboard_files_admin/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="{{constants.ACCESSURL}}/dashboard_files_admin/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <script src="{{constants.ACCESSURL}}/dashboard_files_admin/js/datatables.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="{{constants.ACCESSURL}}/dashboard_files_admin/js/inspinia.js"></script>
+
+    <!-- iCheck -->
+    <script src="{{constants.ACCESSURL}}/dashboard_files_admin/js/plugins/iCheck/icheck.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+        });
+
+        $(document).ready(function(){
+            $('.dataTables-example').DataTable({
+                "order": [[ 1, "desc" ]]
+            });
+
+        });
+
+    </script>
+

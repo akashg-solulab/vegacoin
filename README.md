@@ -1,0 +1,1 @@
+VegaCoin ICO Smart Contract
